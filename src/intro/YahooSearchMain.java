@@ -17,10 +17,14 @@ public class YahooSearchMain {
 		//INICIALIZACION DE SYSTEM.SETPROPERTY()
 	    WebDriver driver;
 		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(30,  TimeUnit.SECONDS);
-		driver.get("http://www.yahoo.com");
-		WebElement searchBox = driver.findElement(By.id("uh-search-box"));
-		WebElement searchButton = driver.findElement(By.id("uh-search-button"));
+		driver.manage().timeouts().implicitlyWait(5,  TimeUnit.SECONDS);
+		driver.get("http://www.yahoo.com"); //navega a la pagina de yahoo
+		WebElement searchBox = driver.findElement(By.id("header-search-input")); //aqui encuentra un elemento por su id
+
+
+
+
+		WebElement searchButton = driver.findElement(By.id("header-desktop-search-button"));
 		
 		searchBox.clear();
 		searchBox.sendKeys("Selenium");
